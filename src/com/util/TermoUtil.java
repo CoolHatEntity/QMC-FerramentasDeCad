@@ -7,11 +7,13 @@ import static com.util.StringUtil.fillString;
 public class TermoUtil {
     public static void imprimeTermos(ArrayList<Termo> termos){
         if(termos.size() > 0){
-            int size = (Integer.toString(getMaxValue(termos)).length());
+            int max = termos.get(getMaxValue(termos)).getNum();
+            int size = (Integer.toString(max).length());
             for (Termo termo : termos) {
                 String temp = fillString("0", Integer.toString(termo.getNum()), size);
                 System.out.printf("|=| [%s] | %s \n", temp, termo.getBin());
             }
+            System.out.println("|========================|");
         }else{
             System.out.println("|=| Sem termos presentes, por favor insira algo antes");
         }
@@ -60,7 +62,7 @@ public class TermoUtil {
         }
         return retVal;
     }
-    public static void sort(ArrayList<Termo> termos){
+    public static void sortTermos(ArrayList<Termo> termos){
         ArrayList<Termo> tempList = new ArrayList<>();
         while (!termos.isEmpty()){
             Termo tempTermo = termos.get(getMinCount(termos));
@@ -68,6 +70,9 @@ public class TermoUtil {
             termos.remove(tempTermo);
         }
         termos.addAll(tempList);
+    }
+    public static void groupTermos(ArrayList<Termo> termos){
+        ArrayList<Termo> tempList = new ArrayList<>();
     }
 
 }
