@@ -24,12 +24,14 @@ public class Main {
             switch (op){
                 case 0: {
                     int nVariaveis = 0;
+                    System.out.println("|=| Notacao usada no programa -> Σm(0,1,2,3,4,5)");
                     while(nVariaveis <= 0){
                         System.out.print("|=| Insira o numero de variaveis: "); nVariaveis = scan.nextInt();
                         if(nVariaveis <= 0){
                             System.out.println("|=| Insira uma entrada valida");
                         }
                     }
+                    System.out.println("|=============================|");
                     int size = ((int)Math.pow(2, (nVariaveis))) - 1;
                     int nTermos = 0;
                     while(nTermos <= 0 && nTermos <= size){
@@ -40,6 +42,7 @@ public class Main {
                             }
                         }
                     }
+                    System.out.println("|=============================|");
                     HashSet<Integer> tempSet = new HashSet<>();
                     while(termos.size() < nTermos){
                         int temp = -1;
@@ -57,6 +60,7 @@ public class Main {
                             }
                         }
                     }
+                    System.out.println("|=============================|");
                     imprimeTermos(termos);
                     sortTermos(termos);
                     imprimeTermos(termos);

@@ -1,6 +1,9 @@
 package com.util;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.util.StringUtil.*;
 
@@ -20,6 +23,7 @@ public class TermoUtil {
 
     public static void imprimeExp(ArrayList<Termo> termos) {
         System.out.print("|=| F = ");
+        int c = 0;
         for(int i = 0; i < termos.size(); i++){
             if(i < termos.size() - 1){
                 System.out.print(termos.get(i).getExp());
@@ -27,7 +31,9 @@ public class TermoUtil {
             }else{
                 System.out.println(termos.get(i).getExp());
             }
+            c = c + termos.get(i).getLiteralCount();
         }
+        System.out.println("|=| Literais: " + c);
     }
     public static int getMaxString(ArrayList<Termo> termos){
         int retVal = (termos.get(0).getString()).length();

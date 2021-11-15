@@ -10,6 +10,7 @@ public class Termo {
     private String bin;
     private String exp;
     private int oneCount;
+    private int literalCount;
     private ArrayList<Integer> hist = new ArrayList<>();
 
     public Termo(int num, int size) {
@@ -37,6 +38,7 @@ public class Termo {
     public void setBin(String bin) {
         this.bin = bin;
         setExp();
+        setLiteralCount();
     }
 
     public int getOneCount() {
@@ -71,6 +73,20 @@ public class Termo {
         }else{
             return Integer.toString(num);
         }
+    }
+
+    public int getLiteralCount(){
+        return this.literalCount;
+    }
+
+    public void setLiteralCount(){
+        int c = 0;
+        for(int i = 0; i < this.getBin().length(); i++){
+            if(this.getBin().charAt(i) != '_'){
+                c++;
+            }
+        }
+        this.literalCount = c;
     }
 
     public String getExp() {
