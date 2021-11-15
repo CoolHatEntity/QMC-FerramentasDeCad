@@ -1,4 +1,4 @@
-﻿# Quine-McCluskey - Ferramentas de CAD 
+# Quine-McCluskey - Ferramentas de CAD 
 &middot; ![GitHub top language](https://img.shields.io/github/languages/top/CoolHatEntity/QMC-FerramentasDeCad) ![Repo Size](https://img.shields.io/github/languages/code-size/CoolHatEntity/QMC-FerramentasDeCad) ![License](https://img.shields.io/github/license/CoolHatEntity/QMC-FerramentasDeCad)
 ## Sobre o projeto
 ### 1. Introdução
