@@ -12,9 +12,10 @@ public class Main {
 
     public static void main(String[] args) {
         int op = -1;
-        ArrayList<Termo> termos = new ArrayList<>();
+
         Scanner scan = new Scanner(System.in);
         while(op != 1){
+            ArrayList<Termo> termos = new ArrayList<>();
             System.out.println("|=============================|");
             System.out.println("|=[0]| Realizar uma operacao");
             System.out.println("|=[1]| Sair");
@@ -43,15 +44,15 @@ public class Main {
                     while(termos.size() < nTermos){
                         int temp = -1;
                         while((!(temp >= 0 && temp <= size))){
-                            System.out.print("|=| Insera o minitermos: "); temp = scan.nextInt();
+                            System.out.print("|=| Insera o minitermo: "); temp = scan.nextInt();
                             if(!tempSet.add(temp)){
-                                System.out.println("|=| Insira um minitermos novo");
+                                System.out.println("|=| Insira um minitermo novo");
                             }else{
                                 if(temp <= size){
                                     Termo term = new Termo(temp, (Integer.toBinaryString(size)).length());
                                     termos.add(term);
                                 }else{
-                                    System.out.printf("|=| Apenas minitermos menores que %d sao permitidos\n", size);
+                                    System.out.printf("|=| Apenas minitermo menores que %d sao permitidos\n", size);
                                 }
                             }
                         }
