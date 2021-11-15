@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
-import static com.util.TermoUtil.imprimeTermos;
-import static com.util.TermoUtil.sortTermos;
+import static com.util.TermoUtil.*;
 
 public class Main {
 
@@ -33,7 +32,7 @@ public class Main {
                     int size = ((int)Math.pow(2, (nVariaveis))) - 1;
                     int nTermos = 0;
                     while(nTermos <= 0 && nTermos <= size){
-                        System.out.print("|=| Insira o numero de termos: "); nTermos = scan.nextInt();
+                        System.out.print("|=| Insira o numero de minitermos: "); nTermos = scan.nextInt();
                         if(nTermos <= 0){
                             if(nTermos <= 0 && nTermos <= size){
                                 System.out.println("|=| Insira uma entrada valida");
@@ -44,15 +43,15 @@ public class Main {
                     while(termos.size() < nTermos){
                         int temp = -1;
                         while((!(temp >= 0 && temp <= size))){
-                            System.out.print("|=| Insera o elemento: "); temp = scan.nextInt();
+                            System.out.print("|=| Insera o minitermos: "); temp = scan.nextInt();
                             if(!tempSet.add(temp)){
-                                System.out.println("|=| Insira um elemento novo");
+                                System.out.println("|=| Insira um minitermos novo");
                             }else{
                                 if(temp <= size){
                                     Termo term = new Termo(temp, (Integer.toBinaryString(size)).length());
                                     termos.add(term);
                                 }else{
-                                    System.out.printf("|=| Apenas elementos menores que %d sao permitidos\n", size);
+                                    System.out.printf("|=| Apenas minitermos menores que %d sao permitidos\n", size);
                                 }
                             }
                         }
@@ -60,6 +59,9 @@ public class Main {
                     imprimeTermos(termos);
                     sortTermos(termos);
                     imprimeTermos(termos);
+                    ArrayList<Termo> result = groupTermos(termos);
+                    imprimeExp(termos);
+                    imprimeExp(result);
                     break;
                 }
                 case 1:
